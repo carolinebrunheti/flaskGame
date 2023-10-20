@@ -4,6 +4,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=("GET", "POST"))
 def index():
+    
     if request.method =="GET":
         variavel = "Game: Adivinhe o numero correto"
         return render_template("index.html", variavel=variavel)
@@ -14,6 +15,10 @@ def index():
             return '<h1>Resultado: Voce Ganhou</h1>'
         else:
             return '<h1>Resultado: Voce Perdeu</h1>'
+if __name__ == '__main__':
+      app.run(host="localhost")
+
+
     
     
 
